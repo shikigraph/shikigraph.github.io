@@ -11,35 +11,73 @@
             text-align: center;
             padding: 50px;
         }
-        a {
-            color: #00bfff;
-            text-decoration: none;
-            font-size: 1.5em;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
         h1 {
             margin-bottom: 50px;
         }
-        .link-container {
-            margin: 20px 0;
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .card {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 220px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0,191,255,0.5);
+        }
+        .card a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+        }
+        .card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+        }
+        .card-title {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #00bfff;
         }
     </style>
 </head>
 <body>
     <h1>Графики</h1>
-    <div class="link-container">
-        <a href="charts/moderatorsTop.html" target="_blank">Топ модераторов</a>
-    </div>
-    <div class="link-container">
-        <a href="charts/bansGraph.html" target="_blank">График банов</a>
-    </div>
-    <div class="link-container">
-        <a href="charts/bansHeatmap.html" target="_blank">Тепловая карта</a>
-    </div>
-    <div class="link-container">
-        <a href="charts/bansReasons.html" target="_blank">Топ причин банов</a>
+    <div class="cards">
+        <div class="card">
+            <a href="charts/moderatorsTop.html" target="_blank">
+                <img src="images/moderatorsTop.png" alt="Топ модераторов">
+                <div class="card-title">Топ модераторов</div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="charts/bansGraph.html" target="_blank">
+                <img src="images/bansGraph.png" alt="График банов">
+                <div class="card-title">График банов</div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="charts/bansHeatmap.html" target="_blank">
+                <img src="images/bansHeatmap.png" alt="Тепловая карта">
+                <div class="card-title">Тепловая карта</div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="charts/bansReasons.html" target="_blank">
+                <img src="images/bansReasons.png" alt="Топ причин банов">
+                <div class="card-title">Топ причин банов</div>
+            </a>
+        </div>
     </div>
 </body>
 </html>
