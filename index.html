@@ -1,95 +1,131 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Графики</title>
     <style>
-        body {
-            background-color: #111;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            margin-bottom: 50px;
-        }
-        .cards {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        .card {
-            background-color: #1a1a1a;
-            border-radius: 10px;
-            overflow: hidden;
-            width: 220px;
-            text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0,191,255,0.5);
-        }
-        .card a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            padding: 15px;
-        }
-        .card img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            display: block;
-        }
-        .card-title {
-            margin-top: 10px;
-            font-size: 1.2em;
-            color: #00bfff;
-        }
+      body {
+        background-color: #111;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+      h1 {
+        margin-bottom: 50px;
+      }
+      .cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+      .card {
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 220px;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+      }
+      .card a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 15px;
+      }
+      .card img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        display: block;
+      }
+      .card-title {
+        margin-top: 10px;
+        font-size: 1.2em;
+        color: #00bfff;
+      }
+
+      #discord-popup {
+        position: fixed;
+        top: 50%;
+        left: -320px; /* почти спрятан, выглядывает 40px */
+        transform: translateY(-50%);
+        width: 350px;
+        height: 500px;
+        background-color: #1a1a1a;
+        border-radius: 10px 0 0 10px;
+        box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+        transition: left 0.3s ease;
+        z-index: 1000;
+        overflow: hidden;
+      }
+
+      #discord-popup:hover {
+        left: 0; 
+      }
+
+
+      #discord-popup iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Графики</h1>
     <div class="cards">
-        <div class="card">
-            <a href="charts/moderatorsTop.html" target="_blank">
-                <img src="images/moderatorsTop.png" alt="Топ модераторов">
-                <div class="card-title">Топ модераторов</div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="charts/bansGraph.html" target="_blank">
-                <img src="images/bansGraph.png" alt="График банов">
-                <div class="card-title">График банов</div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="charts/bansHeatmap.html" target="_blank">
-                <img src="images/bansHeatmap.png" alt="Тепловая карта">
-                <div class="card-title">Тепловая карта</div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="charts/bansReasons.html" target="_blank">
-                <img src="images/bansReasons.png" alt="Топ причин банов">
-                <div class="card-title">Топ причин банов</div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="charts/sankey.html" target="_blank">
-                <img src="images/sankey.png" alt="Самые популярные связи">
-                <div class="card-title">Самые популярные связи</div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="charts/usersTop.html" target="_blank">
-                <img src="images/usersTop.png" alt="Топ 20 пользователей по колву банов">
-                <div class="card-title">Топ 20 пользователей по колву банов</div>
-            </a>
-        </div>
+      <div class="card">
+        <a href="charts/moderatorsTop.html" target="_blank">
+          <img src="images/moderatorsTop.png" alt="Топ модераторов" />
+          <div class="card-title">Топ модераторов</div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="charts/bansGraph.html" target="_blank">
+          <img src="images/bansGraph.png" alt="График банов" />
+          <div class="card-title">График банов</div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="charts/bansHeatmap.html" target="_blank">
+          <img src="images/bansHeatmap.png" alt="Тепловая карта" />
+          <div class="card-title">Тепловая карта</div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="charts/bansReasons.html" target="_blank">
+          <img src="images/bansReasons.png" alt="Топ причин банов" />
+          <div class="card-title">Топ причин банов</div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="charts/sankey.html" target="_blank">
+          <img src="images/sankey.png" alt="Самые популярные связи" />
+          <div class="card-title">Самые популярные связи</div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="charts/usersTop.html" target="_blank">
+          <img
+            src="images/usersTop.png"
+            alt="Топ 20 пользователей по колву банов"
+          />
+          <div class="card-title">Топ 20 пользователей по колву банов</div>
+        </a>
+      </div>
     </div>
-</body>
+    <div id="discord-popup">
+      <iframe
+        src="https://discord.com/widget?id=1274374060968771604&theme=dark"
+        allowtransparency="true"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+      ></iframe>
+    </div>
+  </body>
 </html>
